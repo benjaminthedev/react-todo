@@ -28,13 +28,26 @@ class App extends Component {
     ]
   }
 
+//toggle complete
+  markComplete = (id) => {
+    this.setState({todos: this.state.todos.map(todo => {
+      if(todo.id === id){
+        todo.completed = !todo.completed
+      }
+      return todo;
+    }) });
+  }
+  delToDo = (id) => {
+    this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)]})
+  }
+
 
   render() {
     console.log(this.state.todos);
     return (
       <div className="App">
        <h1>To Do List - Get Stuff Done!</h1>
-       <Todos todos={this.state.todos} />
+       <Todos todos={this.state.todos} markComplete={this.markComplete} delToDo={this.delToDo} />
       </div>
     );
   }
