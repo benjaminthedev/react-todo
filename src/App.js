@@ -53,10 +53,10 @@ class App extends Component {
         <AddTodo /> 
        <h1>To Do List - Get Stuff Done!</h1>
        <Todos todos={this.state.todos} markComplete={this.markComplete} delToDo={this.delToDo} />
-      </div>
+      </div> 
       </div>
     );
-  }
+  }s
 }
 
 export default App;
